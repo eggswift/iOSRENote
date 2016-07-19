@@ -1,16 +1,22 @@
 # Dumpdecrypted
 
 ## 路径
+
 用iFile、Filza等工具找到：
+
 iOS7在`/var/mobile/Application/`
+
 iOS8在`/var/mobile/Containers/Bundle/Application/`
+
 sandbox路径：`/var/mobile/Containers/Data/Application/xxx`
 
 ## 编译
 源码地址：https://github.com/stefanesser/dumpdecrypted/archive/master.zip
+
 `make`后生成`dumpdecrypted.dylib`文件
 
 >**ps:** 这里有几个编译好的dylib可以下载：
+</br>
 https://github.com/iosre/Ready2Rock/blob/master/dumpdecrypted_5.dylib
 https://github.com/iosre/Ready2Rock/blob/master/dumpdecrypted_6.dylib
 https://github.com/iosre/Ready2Rock/blob/master/dumpdecrypted_7.dylib
@@ -63,7 +69,11 @@ root#
 成功后会生成`Name.decrypted`文件
 
 ## 分析
+
+当砸壳完毕后，将砸壳生成的 ***.decrypted 文件拷贝至你的MAC。
+
 通过class-dump分析：
+
 ```ruby
 class-dump --arch armv7 /Users/lihao/Desktop/Name.decrypted -H -o path/
 ```
@@ -71,6 +81,7 @@ class-dump --arch armv7 /Users/lihao/Desktop/Name.decrypted -H -o path/
 ## 注意
 - 通过Cydia等第三方渠道下载的app有的不需要砸壳，当使用dumpdecrypted时会提示以下信息：
 `This mach-o file is not encrypted. Nothing was decrypted.`
+- 当砸壳完毕后，使用 class-dump 仍然只导出 CDStructures.h 一个文件，则可能架构选择错误；因为dumpdecrypted只能砸相应手机处理器对应的壳。
 
 
 

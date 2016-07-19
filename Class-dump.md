@@ -4,7 +4,7 @@ Github地址： https://github.com/nygard/class-dump
 
 主页：http://stevenygard.com/projects/class-dump
 
-下载并打开安装包 http://stevenygard.com/download/class-dump-3.5.dmg（版本可能会随时更新）
+下载并打开[安装包](http://stevenygard.com/download/class-dump-3.5.dmg)（版本可能会随时更新）
 将class-dump可执行文件放到`/usr/bin`下或者`/usr/local/bin`
 
 ```ruby
@@ -30,8 +30,8 @@ Usage: class-dump [options] <mach-o-file>
         --sdk-root     指定完整的SDK根路径（或使用--sdk -IOS / - SDK -MAC的快捷方式）
 ```
 
-如果dump出的文件只有CDStructures.h文件，则表示出现错误。
-如果dump导出的文件命名为XXEncryptedXXX，则需要通过AppCrackr、Clutch、dumpcrypted等进行砸壳。 [这里是dumpcrypted的使用][Dumpdecrypted.md]
+- 如果dump出的文件只有CDStructures.h文件，则表示出现错误。
+- 如果dump导出的文件命名为XXEncryptedXXX，则需要通过AppCrackr、Clutch、dumpcrypted等进行砸壳。 [这里是dumpcrypted的使用](Dumpdecrypted.md)
 
 
 ## 例子
@@ -65,8 +65,15 @@ class-dump /Dev42/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/Sys
 class-dump --arch armv7 app.decrypted -H -o ./heads/
 ```
 
-# class-dump-z
+## class-dump-z
+
 主页：https://code.google.com/p/networkpx/wiki/class_dump_z
+
 使用wiki： https://code.google.com/archive/p/networkpx/wikis/class_dump_z.wiki
 
-将class-dump-z可执行文件放到`/usr/bin`下或者`/usr/local/bin`
+将`class-dump-z`可执行文件放到`/usr/bin`下或者`/usr/local/bin`
+
+
+## 参考文献
+
+- http://itony.me/200.html
